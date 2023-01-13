@@ -2,5 +2,8 @@
     sass --watch assets/scss/main.scss assets/css/style.css
 
 */
+* {
+  color: #2e2e2d, #867772, #EACCC2, #ebccc2, #fff, #737373;
+}
 
 /*# sourceMappingURL=style.css.map */
