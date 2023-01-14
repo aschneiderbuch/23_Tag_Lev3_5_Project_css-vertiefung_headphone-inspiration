@@ -22,4 +22,9 @@ html {
   background-color: #2e2e2d;
 }
 
+/* style css neu in html eingebunden */
+html {
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
