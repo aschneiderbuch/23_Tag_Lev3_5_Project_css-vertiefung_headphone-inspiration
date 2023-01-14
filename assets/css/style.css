@@ -1,9 +1,25 @@
+@charset "UTF-8";
 /* 
     sass --watch assets/scss/main.scss assets/css/style.css
-
 */
+/* ********************* Variablen ***************** */
+/* ********************* Farben ***************** */
+/* ********************* Schriftgröße ***************** */
 * {
   color: #2e2e2d, #867772, #EACCC2, #ebccc2, #fff, #737373;
+}
+
+/* *  **************** img  default    damit alle Bilder vorerst nicht zu groß sind   müssen später eingepasst werden */
+img {
+  max-width: 300px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+html {
+  background-color: #2e2e2d;
 }
 
 /*# sourceMappingURL=style.css.map */

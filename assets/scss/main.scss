@@ -1,9 +1,42 @@
 /* 
     sass --watch assets/scss/main.scss assets/css/style.css
-
 */
+
+/* ********************* Variablen ***************** */
+/* ********************* Farben ***************** */
+$farbe_pTagsNavSidbar___grau: #867772;
+$farbe_schriftenH1B___schwarz: #2e2e2d; 
+$farbe_background___sH6___pastell: #EACCC2;
+$farbe_nav___hoverWeiß: #fff;
+
+$farbe_grau2:#737373;
+$farbe_pastell:#ebccc2;
+
+/* ********************* Schriftgröße ***************** */
+
+
+
 
 *{
     color:#2e2e2d, #867772, #EACCC2,#ebccc2, #fff,  #737373;
     
+}
+
+
+
+
+
+/* *  **************** img  default    damit alle Bilder vorerst nicht zu groß sind   müssen später eingepasst werden */
+
+img{
+    max-width: 300px;
+}
+
+
+h2{
+    font-size: 3rem;
+}
+
+html{
+    background-color: #2e2e2d;
 }
