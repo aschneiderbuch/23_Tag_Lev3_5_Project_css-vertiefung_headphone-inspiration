@@ -32,6 +32,9 @@ html {
 }
 
 header {
+  position: sticky; /* * damit header oben hängen bleibt */
+  top: 0; /* * header soll ganz oben also bei 0px hängen bleiben */
+  background-color: #2e2e2d; /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,6 +52,13 @@ header nav a {
 }
 header nav a:hover {
   color: #fff;
+}
+
+.mainNavSidebar {
+  display: flex;
+  justify-content: centerJus;
+  align-items: centerAli;
+  flex-grow: row wrap;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,21 +4,21 @@
 
 /* ********************* Variablen Start ***************** */
 /* ********************* Varibblen Farben ***************** */
-$farbe_pTagsNavSidbar___grau: #867772;
-$farbe_schriftenH1B___schwarz: #2e2e2d;
-$farbe_background___sH6___pastell: #EACCC2;
-$farbe_nav___hoverWeiß: #fff;
+$headerNavUndSidbar_color___grau: #867772;
+$h1Bish5___color_schwarz: #2e2e2d;
+$h6___color_pastell: #EACCC2;
+$nav_hover___color_weiß: #fff;
 
 $farbe_grau2: #737373;
 $farbe_pastell: #ebccc2;
 
 /* ********************* Varibalen Schriftgröße ***************** */
-$fontSize_h1___: 3rem;
-$fontSize_h2___: 2.5rem;
-$fontSize_h3___: 1.5rem;
-$fontSize_h4___: 1.25rem;
-$fontSize_h5___: 1rem;
-$fontSize_h6___: 0.75rem;
+$h1___fontSize_3Rem: 3rem;
+$h2___fontSize_2_5Rem: 2.5rem;
+$h3___fontSize_1_5Rem: 1.5rem;
+$h4___fontSize_1_25Rem: 1.25rem;
+$h5___fontSize_1Rem: 1rem;
+$h6___fontSize_0_75Rem: 0.75rem;
 
 
 
@@ -28,8 +28,8 @@ $fontSize_h6___: 0.75rem;
 
 /* ********************** Mixin Start ******************* */
 @mixin h1___fontSize_Color () {
-    font-size: $fontSize_h1___;
-    color: $farbe_background___sH6___pastell ;
+    font-size: $h1___fontSize_3Rem;
+    color: $h6___color_pastell ;
 }
 
 @mixin displayFleX_JustifyContentCenter_alginItemsCenter ($flex, $centerJus, $centerAli) {
@@ -76,7 +76,10 @@ html {
 }
 
 
-header {
+header {position: sticky;   /* * damit header oben hängen bleibt */
+    top:0;          /* * header soll ganz oben also bei 0px hängen bleiben */
+    background-color: $h1Bish5___color_schwarz;  /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
+
     @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
     padding: 2vh 10vw 0 3vw;
 
@@ -86,14 +89,19 @@ header {
         @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
         a {
             text-decoration: none;
-            color: $farbe_pTagsNavSidbar___grau;
+            color: $headerNavUndSidbar_color___grau;
 
 
             &:hover {
-                color: $farbe_nav___hoverWeiß;
+                color: $nav_hover___color_weiß;
             }
         }
     }
 }
 
+.mainNavSidebar{
+    @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, centerJus, centerAli);
+    flex-grow: row wrap;
+
+}
 
