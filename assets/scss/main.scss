@@ -2,24 +2,53 @@
     sass --watch assets/scss/main.scss assets/css/style.css
 */
 
-/* ********************* Variablen ***************** */
-/* ********************* Farben ***************** */
+/* ********************* Variablen Start ***************** */
+/* ********************* Varibblen Farben ***************** */
 $farbe_pTagsNavSidbar___grau: #867772;
-$farbe_schriftenH1B___schwarz: #2e2e2d; 
+$farbe_schriftenH1B___schwarz: #2e2e2d;
 $farbe_background___sH6___pastell: #EACCC2;
 $farbe_nav___hoverWeiß: #fff;
 
-$farbe_grau2:#737373;
-$farbe_pastell:#ebccc2;
+$farbe_grau2: #737373;
+$farbe_pastell: #ebccc2;
 
-/* ********************* Schriftgröße ***************** */
+/* ********************* Varibalen Schriftgröße ***************** */
+$fontSize_h1___: 3rem;
+$fontSize_h2___: 2.5rem;
+$fontSize_h3___: 1.5rem;
+$fontSize_h4___: 1.25rem;
+$fontSize_h5___: 1rem;
+$fontSize_h6___: 0.75rem;
 
 
 
 
-*{
-    color:#2e2e2d, #867772, #EACCC2,#ebccc2, #fff,  #737373;
-    
+/* ********************* Variablen Start ***************** */
+
+
+/* ********************** Mixin Start ******************* */
+@mixin h1___fontSize_Color () {
+    font-size: $fontSize_h1___;
+    color: $farbe_background___sH6___pastell ;
+}
+
+@mixin displayFleX_JustifyContentCenter_alginItemsCenter ($flex, $centerJus, $centerAli) {
+    display: $flex;
+    justify-content: $centerJus;
+    align-items: $centerAli;
+}
+
+
+
+
+
+
+
+/* ********************** Mixin Start ******************* */
+
+* {
+    color: #2e2e2d, #867772, #EACCC2, #ebccc2, #fff, #737373;
+
 }
 
 
@@ -28,20 +57,43 @@ $farbe_pastell:#ebccc2;
 
 /* *  **************** img  default    damit alle Bilder vorerst nicht zu groß sind   müssen später eingepasst werden */
 
-img{
+img {
     max-width: 300px;
 }
 
+/* ****************** Schriftgrößen ******************* */
 
-h2{
+h1 {
+    @include h1___fontSize_Color()
+}
+
+h2 {
     font-size: 3rem;
 }
 
-html{
+html {
     background-color: #2e2e2d;
 }
 
-/* style css neu in html eingebunden */
-html {
-    color:white
+
+header {
+    @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
+    padding: 2vh 10vw 0 3vw;
+
+    nav {
+        width: 30vw;            /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
+        
+        @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
+        a {
+            text-decoration: none;
+            color: $farbe_pTagsNavSidbar___grau;
+
+
+            &:hover {
+                color: $farbe_nav___hoverWeiß;
+            }
+        }
+    }
 }
+
+

@@ -2,9 +2,12 @@
 /* 
     sass --watch assets/scss/main.scss assets/css/style.css
 */
-/* ********************* Variablen ***************** */
-/* ********************* Farben ***************** */
-/* ********************* Schriftgröße ***************** */
+/* ********************* Variablen Start ***************** */
+/* ********************* Varibblen Farben ***************** */
+/* ********************* Varibalen Schriftgröße ***************** */
+/* ********************* Variablen Start ***************** */
+/* ********************** Mixin Start ******************* */
+/* ********************** Mixin Start ******************* */
 * {
   color: #2e2e2d, #867772, #EACCC2, #ebccc2, #fff, #737373;
 }
@@ -12,6 +15,12 @@
 /* *  **************** img  default    damit alle Bilder vorerst nicht zu groß sind   müssen später eingepasst werden */
 img {
   max-width: 300px;
+}
+
+/* ****************** Schriftgrößen ******************* */
+h1 {
+  font-size: 3rem;
+  color: #EACCC2;
 }
 
 h2 {
@@ -22,9 +31,24 @@ html {
   background-color: #2e2e2d;
 }
 
-/* style css neu in html eingebunden */
-html {
-  color: white;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 10vw 0 3vw;
+}
+header nav {
+  width: 30vw; /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav a {
+  text-decoration: none;
+  color: #867772;
+}
+header nav a:hover {
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
