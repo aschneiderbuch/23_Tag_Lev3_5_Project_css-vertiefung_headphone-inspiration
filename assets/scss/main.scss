@@ -13,7 +13,7 @@ $farbe_grau2: #737373;
 $farbe_pastell: #ebccc2;
 
 /* ********************* Varibalen Schriftgröße ***************** */
-$h1___fontSize_3Rem: 3rem;
+$h1___fontSize_3Rem: 2rem;  /* *** Vorsicht keine 3 Rem */
 $h2___fontSize_2_5Rem: 2.5rem;
 $h3___fontSize_1_5Rem: 1.5rem;
 $h4___fontSize_1_25Rem: 1.25rem;
@@ -27,9 +27,11 @@ $h6___fontSize_0_75Rem: 0.75rem;
 
 
 /* ********************** Mixin Start ******************* */
-@mixin h1___fontSize_Color () {
+@mixin h1___fontSize_3Rem_color_h6pastell_fontFamily_Normal_fontWeight_200weight () {
     font-size: $h1___fontSize_3Rem;
     color: $h6___color_pastell ;
+    font-family: Normal_WorkSans;
+    font-weight: 200;
 }
 
 @mixin displayFleX_JustifyContentCenter_alginItemsCenter ($flex, $centerJus, $centerAli) {
@@ -44,7 +46,34 @@ $h6___fontSize_0_75Rem: 0.75rem;
 
 
 
-/* ********************** Mixin Start ******************* */
+
+/* ********************** Mixin Ende ******************* */
+
+
+
+/* *********************** Font Family Start ***************** */
+
+@font-face {
+    font-family: Normal_WorkSans ;
+    src: url("../fonts/Work_Sans_1/WorkSans-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: Italic_WorkSans;
+    src: url("../fonts/Work_Sans_1/WorkSans-Italic-VariableFont_wght.ttf");
+}
+
+
+
+/*        ********* Font Familys zum einfügen **** 
+
+font-family: Normal_WorkS,sans-serif;
+
+font-family: Italic_WorkSans,sans-serif;
+
+*/
+
+/* *********************** Font Family Ende ***************** */
 
 * {
     color: #2e2e2d, #867772, #EACCC2, #ebccc2, #fff, #737373;
@@ -64,7 +93,7 @@ img {
 /* ****************** Schriftgrößen ******************* */
 
 h1 {
-    @include h1___fontSize_Color()
+    @include h1___fontSize_3Rem_color_h6pastell_fontFamily_Normal_fontWeight_200weight();
 }
 
 h2 {
@@ -76,17 +105,23 @@ html {
 }
 
 
-header {position: sticky;   /* * damit header oben hängen bleibt */
-    top:0;          /* * header soll ganz oben also bei 0px hängen bleiben */
-    background-color: $h1Bish5___color_schwarz;  /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
+header {
+    position: sticky;
+    /* * damit header oben hängen bleibt */
+    top: 0;
+    /* * header soll ganz oben also bei 0px hängen bleiben */
+    background-color: $h1Bish5___color_schwarz;
+    /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
 
     @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
     padding: 2vh 10vw 0 3vw;
 
     nav {
-        width: 30vw;            /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
-        
+        width: 30vw;
+        /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
+
         @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
+
         a {
             text-decoration: none;
             color: $headerNavUndSidbar_color___grau;
@@ -99,9 +134,27 @@ header {position: sticky;   /* * damit header oben hängen bleibt */
     }
 }
 
-.mainNavSidebar{
+.mainNavSidebar {
     @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, centerJus, centerAli);
     flex-grow: row wrap;
 
 }
 
+main {
+    section {
+        article{
+            h1{
+                background-color: red;
+                width: 20vw;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.mainNavSidebar {
+    background-color: red;
+    width: 10vw;
+    height: 20vh;
+    position: fixed;
+}

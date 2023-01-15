@@ -5,9 +5,27 @@
 /* ********************* Variablen Start ***************** */
 /* ********************* Varibblen Farben ***************** */
 /* ********************* Varibalen Schriftgröße ***************** */
+/* *** Vorsicht keine 3 Rem */
 /* ********************* Variablen Start ***************** */
 /* ********************** Mixin Start ******************* */
-/* ********************** Mixin Start ******************* */
+/* ********************** Mixin Ende ******************* */
+/* *********************** Font Family Start ***************** */
+@font-face {
+  font-family: Normal_WorkSans;
+  src: url("../fonts/Work_Sans_1/WorkSans-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Italic_WorkSans;
+  src: url("../fonts/Work_Sans_1/WorkSans-Italic-VariableFont_wght.ttf");
+}
+/*        ********* Font Familys zum einfügen **** 
+
+font-family: Normal_WorkS,sans-serif;
+
+font-family: Italic_WorkSans,sans-serif;
+
+*/
+/* *********************** Font Family Ende ***************** */
 * {
   color: #2e2e2d, #867772, #EACCC2, #ebccc2, #fff, #737373;
 }
@@ -19,8 +37,10 @@ img {
 
 /* ****************** Schriftgrößen ******************* */
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #EACCC2;
+  font-family: Normal_WorkSans;
+  font-weight: 200;
 }
 
 h2 {
@@ -32,16 +52,20 @@ html {
 }
 
 header {
-  position: sticky; /* * damit header oben hängen bleibt */
-  top: 0; /* * header soll ganz oben also bei 0px hängen bleiben */
-  background-color: #2e2e2d; /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
+  position: sticky;
+  /* * damit header oben hängen bleibt */
+  top: 0;
+  /* * header soll ganz oben also bei 0px hängen bleiben */
+  background-color: #2e2e2d;
+  /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2vh 10vw 0 3vw;
 }
 header nav {
-  width: 30vw; /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
+  width: 30vw;
+  /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,6 +83,19 @@ header nav a:hover {
   justify-content: centerJus;
   align-items: centerAli;
   flex-grow: row wrap;
+}
+
+main section article h1 {
+  background-color: red;
+  width: 20vw;
+  margin: 0 auto;
+}
+
+.mainNavSidebar {
+  background-color: red;
+  width: 10vw;
+  height: 20vh;
+  position: fixed;
 }
 
 /*# sourceMappingURL=style.css.map */
