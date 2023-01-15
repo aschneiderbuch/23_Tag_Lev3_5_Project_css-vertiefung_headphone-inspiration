@@ -153,8 +153,9 @@ main {
 }
 
 .mainNavSidebar {
-    background-color: red;
-    width: 10vw;
+    background-color: rgba(255, 0, 0, 0.46);  /* * kein background-color, damit es transparent bleibt */
+    width: 10vw;            
     height: 20vh;
-    position: fixed;
+    position: fixed;       /* damit es hängen bleibt */
+    top: 40vh;              /* * damit es so in der hälfte der Höhe ist */
 }
