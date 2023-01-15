@@ -146,10 +146,10 @@ header {
 /* ********************* Main ********************** */
 
 
-main>{
+main> {
 
 
-    section>{
+    section> {
         article {
             h1 {
                 background-color: red;
@@ -158,7 +158,8 @@ main>{
             }
         }
 
-        >article:nth-of-type(2) {
+        /* * braucht hier kein > weil ja schon oben > ist und somit eines in css auftaucht */
+        article:nth-of-type(2) {
             background-color: green;
             width: 100%;
             @include ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center(flex, center, center);
@@ -171,6 +172,7 @@ main>{
         }
     }
 }
+
 
 
 /* ********************* Main Nav Sidebar ********************** */
@@ -209,8 +211,38 @@ main>{
     }
 }
 
-/* ********************* Main Class Bilder ******************** */
 
+/* **************** Bilder Section Display ****** */
+.bilder___sectionDisplay {
+    /* * include nicht über taben machen sonder auto, so das die kommas mitkommen, dann geht auch im mixin die Variablen ;-) */
+    @include ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center(flex, center, center);
+    flex-wrap: wrap;
+    /* **** ??? **** */
+
+    padding-top: 15vh;
+
+    background-color: red;
+
+}
+
+
+/* ********************* Main Class Bilder ******************** */
+.bilder {
+    background-color: green;
+     width: 25vw;
+     
+
+
+    img {
+        max-width: 100%;
+
+        object-fit: cover;
+        object-position: 0px 0px;
+
+ 
+    }
+
+}
 
 
 
@@ -218,8 +250,8 @@ main>{
 
 /* ***************** Main Class textBlock ******************** */
 
-h1 {
-    color: blue
+.textBlock {
+    background-color: blue;
+    width: 20vw;
+    padding-left: 5vw;
 }
-
-;

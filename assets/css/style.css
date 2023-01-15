@@ -91,6 +91,18 @@ main > section > article h1 {
   width: 20vw;
   margin: 0 auto;
 }
+main > section > article:nth-of-type(2) {
+  background-color: green;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main > section > article:nth-of-type(2) > img {
+  max-width: 90%;
+  /* * mit max-width arbeiten, denn ganz oben ist ja max-width als default noch auf 300px begrenzt von daher bringt width nichts */
+}
+
 /* ********************* Main Nav Sidebar ********************** */
 .mainNavSidebar {
   display: flex;
@@ -119,10 +131,34 @@ main > section > article h1 {
   border-radius: 50vw solid #fff;
 }
 
+/* **************** Bilder Section Display ****** */
+.bilder___sectionDisplay {
+  /* * include nicht über taben machen sonder auto, so das die kommas mitkommen, dann geht auch im mixin die Variablen ;-) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* **** ??? **** */
+  padding-top: 15vh;
+  background-color: red;
+}
+
 /* ********************* Main Class Bilder ******************** */
+.bilder {
+  background-color: green;
+  width: 25vw;
+}
+.bilder img {
+  max-width: 100%;
+  object-fit: cover;
+  object-position: 0px 0px;
+}
+
 /* ***************** Main Class textBlock ******************** */
-h1 {
-  color: blue;
+.textBlock {
+  background-color: blue;
+  width: 20vw;
+  padding-left: 5vw;
 }
 
 /*# sourceMappingURL=style.css.map */
