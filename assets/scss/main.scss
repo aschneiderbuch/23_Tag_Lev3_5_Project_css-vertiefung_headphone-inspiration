@@ -13,7 +13,8 @@ $farbe_grau2: #737373;
 $farbe_pastell: #ebccc2;
 
 /* ********************* Varibalen Schriftgröße ***************** */
-$h1___fontSize_3Rem: 2rem;  /* *** Vorsicht keine 3 Rem */
+$h1___fontSize_3Rem: 2rem;
+/* *** Vorsicht keine 3 Rem */
 $h2___fontSize_2_5Rem: 2.5rem;
 $h3___fontSize_1_5Rem: 1.5rem;
 $h4___fontSize_1_25Rem: 1.25rem;
@@ -27,14 +28,14 @@ $h6___fontSize_0_75Rem: 0.75rem;
 
 
 /* ********************** Mixin Start ******************* */
-@mixin h1___fontSize_3Rem_color_h6pastell_fontFamily_Normal_fontWeight_200weight () {
-    font-size: $h1___fontSize_3Rem;
-    color: $h6___color_pastell ;
-    font-family: Normal_WorkSans;
-    font-weight: 200;
+@mixin schrift4Param___fontSize_3Rem___color_h6pastell___fontFamily_Normal___fontWeight_200weight ($fontSize, $farbe, $fontFamily, $fontWeight, ) {
+    font-size: $fontSize;
+    color: $farbe;
+    font-family: $fontFamily;
+    font-weight: $fontWeight;
 }
 
-@mixin displayFleX_JustifyContentCenter_alginItemsCenter ($flex, $centerJus, $centerAli) {
+@mixin ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center ($flex, $centerJus, $centerAli) {
     display: $flex;
     justify-content: $centerJus;
     align-items: $centerAli;
@@ -54,7 +55,7 @@ $h6___fontSize_0_75Rem: 0.75rem;
 /* *********************** Font Family Start ***************** */
 
 @font-face {
-    font-family: Normal_WorkSans ;
+    font-family: Normal_WorkSans;
     src: url("../fonts/Work_Sans_1/WorkSans-VariableFont_wght.ttf");
 }
 
@@ -88,12 +89,13 @@ font-family: Italic_WorkSans,sans-serif;
 
 img {
     max-width: 300px;
+    /* * unten dann max-width erweitern, nicht mit width arbeiten bringt nix */
 }
 
 /* ****************** Schriftgrößen ******************* */
 
 h1 {
-    @include h1___fontSize_3Rem_color_h6pastell_fontFamily_Normal_fontWeight_200weight();
+    @include schrift4Param___fontSize_3Rem___color_h6pastell___fontFamily_Normal___fontWeight_200weight(2rem, $farbe_pastell , Normal_Work, 200)
 }
 
 h2 {
@@ -104,6 +106,9 @@ html {
     background-color: #2e2e2d;
 }
 
+/* ********************* Header ********************** */
+/* ********************* Header ********************** */
+/* ********************* Header ********************** */
 
 header {
     position: sticky;
@@ -113,14 +118,16 @@ header {
     background-color: $h1Bish5___color_schwarz;
     /* * damit hinter dieser seite der restliche Text der von unten hoch kommt überdeckt wird */
 
-    @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
+    @include ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center(flex, space-between, center);
     padding: 2vh 10vw 0 3vw;
+
+    /* ********************* Header Nav ********************** */
 
     nav {
         width: 30vw;
         /* muss dann in Mobile kleiner bzw ein BurgerMenü werden */
 
-        @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, space-between, center);
+        @include ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center(flex, space-between, center);
 
         a {
             text-decoration: none;
@@ -134,28 +141,85 @@ header {
     }
 }
 
-.mainNavSidebar {
-    @include displayFleX_JustifyContentCenter_alginItemsCenter(flex, centerJus, centerAli);
-    flex-grow: row wrap;
+/* ********************* Main ********************** */
+/* ********************* Main ********************** */
+/* ********************* Main ********************** */
 
-}
 
-main {
-    section {
-        article{
-            h1{
+main>{
+
+
+    section>{
+        article {
+            h1 {
                 background-color: red;
                 width: 20vw;
                 margin: 0 auto;
             }
         }
+
+        >article:nth-of-type(2) {
+            background-color: green;
+            width: 100%;
+            @include ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center(flex, center, center);
+
+
+            >img {
+                max-width: 90%;
+                /* * mit max-width arbeiten, denn ganz oben ist ja max-width als default noch auf 300px begrenzt von daher bringt width nichts */
+            }
+        }
     }
 }
 
+
+/* ********************* Main Nav Sidebar ********************** */
+
 .mainNavSidebar {
-    background-color: rgba(255, 0, 0, 0.46);  /* * kein background-color, damit es transparent bleibt */
-    width: 10vw;            
-    height: 20vh;
-    position: fixed;       /* damit es hängen bleibt */
-    top: 40vh;              /* * damit es so in der hälfte der Höhe ist */
+    @include ausrichten3Param___display_FleX___JustifyContent_Center___alginItems_Center(flex, centerJus, centerAli);
+    flex-grow: row wrap;
+
+    background-color: rgba(255, 0, 0, 0.46);
+    /* * kein background-color, damit es transparent bleibt */
+    width: 10vw;
+    position: fixed;
+    /* damit es hängen bleibt */
+    top: 20vh;
+    /* * damit es so in der hälfte der Höhe ist */
+    line-height: 5;
+
+    ul {
+        list-style-type: circle;
+
+        li {
+            a {
+                text-decoration: none;
+                color: $headerNavUndSidbar_color___grau;
+
+                padding-left: 2vw;
+
+                &:hover {
+                    color: $nav_hover___color_weiß;
+                    border-radius: 50vw solid $nav_hover___color_weiß;
+
+
+                }
+            }
+        }
+    }
 }
+
+/* ********************* Main Class Bilder ******************** */
+
+
+
+
+
+
+/* ***************** Main Class textBlock ******************** */
+
+h1 {
+    color: blue
+}
+
+;

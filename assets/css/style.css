@@ -33,13 +33,14 @@ font-family: Italic_WorkSans,sans-serif;
 /* *  **************** img  default    damit alle Bilder vorerst nicht zu groß sind   müssen später eingepasst werden */
 img {
   max-width: 300px;
+  /* * unten dann max-width erweitern, nicht mit width arbeiten bringt nix */
 }
 
 /* ****************** Schriftgrößen ******************* */
 h1 {
   font-size: 2rem;
-  color: #EACCC2;
-  font-family: Normal_WorkSans;
+  color: #ebccc2;
+  font-family: Normal_Work;
   font-weight: 200;
 }
 
@@ -51,6 +52,9 @@ html {
   background-color: #2e2e2d;
 }
 
+/* ********************* Header ********************** */
+/* ********************* Header ********************** */
+/* ********************* Header ********************** */
 header {
   position: sticky;
   /* * damit header oben hängen bleibt */
@@ -62,6 +66,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 2vh 10vw 0 3vw;
+  /* ********************* Header Nav ********************** */
 }
 header nav {
   width: 30vw;
@@ -78,25 +83,46 @@ header nav a:hover {
   color: #fff;
 }
 
+/* ********************* Main ********************** */
+/* ********************* Main ********************** */
+/* ********************* Main ********************** */
+main > section > article h1 {
+  background-color: red;
+  width: 20vw;
+  margin: 0 auto;
+}
+/* ********************* Main Nav Sidebar ********************** */
 .mainNavSidebar {
   display: flex;
   justify-content: centerJus;
   align-items: centerAli;
   flex-grow: row wrap;
-}
-
-main section article h1 {
-  background-color: red;
-  width: 20vw;
-  margin: 0 auto;
-}
-
-.mainNavSidebar {
-  background-color: rgba(255, 0, 0, 0.46); /* * kein background-color, damit es transparent bleibt */
+  background-color: rgba(255, 0, 0, 0.46);
+  /* * kein background-color, damit es transparent bleibt */
   width: 10vw;
-  height: 20vh;
-  position: fixed; /* damit es hängen bleibt */
-  top: 40vh; /* * damit es so in der hälfte der Höhe ist */
+  position: fixed;
+  /* damit es hängen bleibt */
+  top: 20vh;
+  /* * damit es so in der hälfte der Höhe ist */
+  line-height: 5;
+}
+.mainNavSidebar ul {
+  list-style-type: circle;
+}
+.mainNavSidebar ul li a {
+  text-decoration: none;
+  color: #867772;
+  padding-left: 2vw;
+}
+.mainNavSidebar ul li a:hover {
+  color: #fff;
+  border-radius: 50vw solid #fff;
+}
+
+/* ********************* Main Class Bilder ******************** */
+/* ***************** Main Class textBlock ******************** */
+h1 {
+  color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */
